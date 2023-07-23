@@ -10,17 +10,17 @@ const colors = {
 	secondary: '#161D25',
 	'bg-color': '#F2F2F5',
 	aqua: '#268697',
-	red: twColors.red[400]
+	red: twColors.red[400],
 }
 
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    colors,
-    extend: {
+	content: [
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/**/*.{js,ts,jsx,tsx,mdx}',
+	],
+	theme: {
+		colors,
+		extend: {
 			fontSize: {
 				xs: '0.82rem',
 				sm: '0.98rem',
@@ -35,37 +35,37 @@ module.exports = {
 				'6xl': '4.3rem',
 				'7xl': '5.17rem',
 				'8xl': '6.9rem',
-				'9xl': '9.2rem'
+				'9xl': '9.2rem',
 			},
 			zIndex: {
 				1: 1,
 				2: 2,
-				3: 3
+				3: 3,
 			},
 			keyframes: {
 				animationOpacity: {
 					from: { opacity: 0.2 },
-					to: { opacity: 1 }
+					to: { opacity: 1 },
 				},
 				scaleIn: {
 					'0%': {
 						opacity: 0,
-						transform: 'scale(0.9)'
+						transform: 'scale(0.9)',
 					},
 					'50%': {
-						opacity: 0.3
+						opacity: 0.3,
 					},
 					'100%': {
 						opacity: 1,
-						transform: 'scale(1)'
-					}
-				}
+						transform: 'scale(1)',
+					},
+				},
 			},
 			animation: {
 				opacity: 'animationOpacity .5s ease-in-out',
-				scaleIn: 'scaleIn .35s ease-in-out'
-			}
-		}
+				scaleIn: 'scaleIn .35s ease-in-out',
+			},
+		},
 	},
-  plugins: [],
+	plugins: [],
 }
