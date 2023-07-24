@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Golos_Text, Inter } from 'next/font/google'
+import { PropsWithChildren } from 'react'
+
+import Providers from '@/providers/Providers'
 
 import '@/assets/styles/globals.css'
 
@@ -13,14 +16,34 @@ export const metadata: Metadata = {
 	},
 }
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode
-}) {
+const golos = Golos_Text({
+	weight: ['400', '500', '600', '700'],
+	subsets: ['latin', 'cyrillic-ext'],
+	display: 'swap',
+	style: ['normal'],
+	variable: '--font-golos',
+})
+
+export default function RootLayout({ children }: PropsWithChildren<unknown>) {
 	return (
-		<html lang='en'>
-			<body className={inter.className}>{children}</body>
+		<html lang='en' className={golos.variable}>
+			<body>
+				<Providers>
+					<div className='bg-secondary'>
+						<div
+							className='grid'
+							style={{
+								gridTemplateColumns: '.8fr 4fr',
+							}}
+						>
+							<main className='p-12 pb-52 bg-bg-color rounded-tl-lg'>
+								{children}
+							</main>
+						</div>
+					</div>
+				</Providers>
+				<div id='modal'></div>
+			</body>
 		</html>
 	)
 }
