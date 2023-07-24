@@ -7,6 +7,8 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 import { persistor, store } from '@/store/store'
 
+import AuthProvider from './auth-provider/AuthProvider'
+
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
@@ -20,7 +22,7 @@ export default function Providers({ children }: PropsWithChildren) {
 		<QueryClientProvider client={queryClient}>
 			<ReduxProvider store={store}>
 				<PersistGate loading={null} persistor={persistor}>
-					{children}
+					<AuthProvider>{children}</AuthProvider>
 				</PersistGate>
 			</ReduxProvider>
 		</QueryClientProvider>
