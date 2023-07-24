@@ -4,7 +4,10 @@ import { PropsWithChildren } from 'react'
 
 import Providers from '@/providers/Providers'
 
-import '@/assets/styles/globals.css'
+import '@/assets/styles/globals.scss'
+
+import Header from './layout/header/Header'
+import Sidebar from './layout/sidebar/Sidebar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,12 +33,14 @@ export default function RootLayout({ children }: PropsWithChildren<unknown>) {
 			<body>
 				<Providers>
 					<div className='bg-secondary'>
+						<Header />
 						<div
 							className='grid'
 							style={{
 								gridTemplateColumns: '.8fr 4fr',
 							}}
 						>
+							<Sidebar />
 							<main className='p-12 pb-52 bg-bg-color rounded-tl-lg'>
 								{children}
 							</main>

@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
+body {
 	@apply overflow-x-hidden bg-bg-color text-base text-black;
 	font-family: var(--font-golos), sans-serif;
-} */
+}
 
 .disabled {
 	pointer-events: none;
