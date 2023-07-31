@@ -6,7 +6,7 @@ import {
 	PURGE,
 	REGISTER,
 	REHYDRATE,
-	persistStore,
+	persistStore
 } from 'redux-persist'
 
 import { carouselSlice } from './carousel/carousel.slice'
@@ -20,7 +20,7 @@ const combinedReducers = combineReducers({
 	cart: cartSlice.reducer,
 	carousel: carouselSlice.reducer,
 	user: userSlice.reducer,
-	filters: filtersSlice.reducer,
+	filters: filtersSlice.reducer
 })
 
 let mainReducer = combinedReducers
@@ -29,11 +29,10 @@ if (isClient) {
 	const { persistReducer } = require('redux-persist')
 	const storage = require('redux-persist/lib/storage').default
 
-	// save cart state to localStorage
 	const persistConfig = {
-		key: 'coolstore',
+		key: 'amazon-v2',
 		storage,
-		whitelist: ['cart'],
+		whitelist: ['cart']
 	}
 
 	mainReducer = persistReducer(persistConfig, combinedReducers)
@@ -44,9 +43,9 @@ export const store = configureStore({
 	middleware: getDefaultMiddleware =>
 		getDefaultMiddleware({
 			serializableCheck: {
-				ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-			},
-		}),
+				ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+			}
+		})
 })
 
 export const persistor = persistStore(store)

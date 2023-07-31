@@ -16,7 +16,7 @@ export const UserService = {
 	async getProfile() {
 		return instance<IFullUser>({
 			url: `${USERS}/profile`,
-			method: 'GET',
+			method: 'GET'
 		})
 	},
 
@@ -24,14 +24,14 @@ export const UserService = {
 		return instance<IUser>({
 			url: `${USERS}/profile`,
 			method: 'PUT',
-			data,
+			data
 		})
 	},
 
 	async toggleFavorite(productId: string | number) {
 		return instance<IUser>({
 			url: `${USERS}/profile/favorites/${productId}`,
-			method: 'PATCH',
+			method: 'PATCH'
 		})
-	},
+	}
 }

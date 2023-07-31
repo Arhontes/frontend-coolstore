@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { getFromLocalStorage } from '@/utils/getFromLocalStorage'
+import { getStoreLocal } from '@/utils/local-storage'
 
 import { checkAuth, login, logout, register } from './user.actions'
 import { IInitialState } from './user.interface'
 
 const initialState: IInitialState = {
-	user: getFromLocalStorage('user'),
-	isLoading: false,
+	user: getStoreLocal('user'),
+	isLoading: false
 }
 
 export const userSlice = createSlice({
@@ -45,5 +45,5 @@ export const userSlice = createSlice({
 			.addCase(checkAuth.fulfilled, (state, { payload }) => {
 				state.user = payload.user
 			})
-	},
+	}
 })
