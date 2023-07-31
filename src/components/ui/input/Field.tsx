@@ -6,7 +6,7 @@ import { IField } from './field.interface'
 const Field = forwardRef<HTMLInputElement, IField>(
 	(
 		{ placeholder, error, className, type = 'text', style, Icon, ...rest },
-		ref
+		ref,
 	) => {
 		return (
 			<div className={cn('mb-4', className)} style={style}>
@@ -22,8 +22,8 @@ const Field = forwardRef<HTMLInputElement, IField>(
 						className={cn(
 							'px-4 py-2 w-full outline-none border border-gray border-solid focus:border-primary transition-all placeholder:text-gray rounded-lg',
 							{
-								'border-red': !!error
-							}
+								'border-red': !!error,
+							},
 						)}
 						{...rest}
 					/>
@@ -31,7 +31,7 @@ const Field = forwardRef<HTMLInputElement, IField>(
 				{error && <div className='text-red mt-1 text-sm'>{error}</div>}
 			</div>
 		)
-	}
+	},
 )
 
 Field.displayName = 'Field'
