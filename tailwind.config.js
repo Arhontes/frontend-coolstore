@@ -14,7 +14,7 @@ const colors = {
 }
 
 module.exports = {
-	content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+	content: ['./src/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		colors,
 		extend: {
