@@ -32,7 +32,7 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 	const router = useRouter()
 
 	const isProtectedRoute = protectedRoutes.some(route =>
-		pathname?.startsWith(route),
+		pathname?.startsWith(route)
 	)
 
 	const isAdminRoute = pathname?.startsWith(ADMIN_PANEL_URL)
