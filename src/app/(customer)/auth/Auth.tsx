@@ -12,8 +12,8 @@ import { IEmailPassword } from '@/store/user/user.interface'
 
 import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
-import { useAuthRedirect } from '@/hooks/useAuthRedirect'
 
+import { useAuthRedirect } from './useAuthRedirect'
 import { validEmail } from './valid-email'
 
 const Auth: FC = () => {
@@ -29,9 +29,9 @@ const Auth: FC = () => {
 		register: formRegister,
 		handleSubmit,
 		formState: { errors },
-		reset,
+		reset
 	} = useForm<IEmailPassword>({
-		mode: 'onChange',
+		mode: 'onChange'
 	})
 
 	const onSubmit: SubmitHandler<IEmailPassword> = data => {
@@ -58,8 +58,8 @@ const Auth: FC = () => {
 								required: 'Email is required',
 								pattern: {
 									value: validEmail,
-									message: 'Please enter a valid email address',
-								},
+									message: 'Please enter a valid email address'
+								}
 							})}
 							placeholder='Email'
 							error={errors.email?.message}
@@ -69,8 +69,8 @@ const Auth: FC = () => {
 								required: 'Password is required',
 								minLength: {
 									value: 6,
-									message: 'Min length should more 6 symbols',
-								},
+									message: 'Min length should more 6 symbols'
+								}
 							})}
 							type='password'
 							placeholder='Password'
