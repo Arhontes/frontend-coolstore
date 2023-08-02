@@ -3,11 +3,11 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import {
 	IAddToCartPayload,
 	ICartInitialState,
-	IChangeQuantityPayload
+	IChangeQuantityPayload,
 } from './cart.types'
 
 const initialState: ICartInitialState = {
-	items: []
+	items: [],
 }
 
 export const cartSlice = createSlice({
@@ -16,7 +16,7 @@ export const cartSlice = createSlice({
 	reducers: {
 		addToCart: (state, action: PayloadAction<IAddToCartPayload>) => {
 			const isExist = state.items.some(
-				item => item.product.id === action.payload.product.id
+				item => item.product.id === action.payload.product.id,
 			)
 
 			if (!isExist)
@@ -32,6 +32,6 @@ export const cartSlice = createSlice({
 		},
 		reset: state => {
 			state.items = []
-		}
-	}
+		},
+	},
 })
