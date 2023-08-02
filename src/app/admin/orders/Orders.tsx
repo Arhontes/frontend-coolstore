@@ -3,9 +3,9 @@
 import { FC } from 'react'
 
 import Heading from '@/ui/Heading'
-import AdminList from '@/ui/admin/admin-list/AdminList'
 
 import { useAdminOrders } from './useAdminOrders'
+import { AdminList } from '@/components'
 
 const Orders: FC = () => {
 	const { data, isFetching } = useAdminOrders()

@@ -3,9 +3,9 @@
 import { FC } from 'react'
 
 import Heading from '@/ui/Heading'
-import AdminList from '@/ui/admin/admin-list/AdminList'
 
 import { useAdminProducts } from './useAdminProducts'
+import { AdminList } from '@/components'
 
 const Products: FC = () => {
 	const { data, isFetching, mutate } = useAdminProducts()
