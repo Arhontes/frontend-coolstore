@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 
 	const paths = categories.data.map(category => {
 		return {
-			params: { slug: category.slug }
+			params: { slug: category.slug },
 		}
 	})
 
@@ -23,18 +23,18 @@ export async function generateStaticParams() {
 
 async function getProducts(params: TypeParamSlug) {
 	const { data: products } = await ProductService.getByCategory(
-		params?.slug as string
+		params?.slug as string,
 	)
 
 	const { data: category } = await CategoryService.getBySlug(
-		params?.slug as string
+		params?.slug as string,
 	)
 
 	return { products, category }
 }
 
 export async function generateMetadata({
-	params
+	params,
 }: IPageSlugParam): Promise<Metadata> {
 	const { category, products } = await getProducts(params)
 
@@ -43,8 +43,8 @@ export async function generateMetadata({
 		description: `Random description about ${category.name}`,
 		openGraph: {
 			images: products[0]?.images || [],
-			description: `Random description about ${category.name}`
-		}
+			description: `Random description about ${category.name}`,
+		},
 	}
 }
 

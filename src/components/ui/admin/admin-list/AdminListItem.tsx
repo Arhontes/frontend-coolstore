@@ -4,7 +4,10 @@ import styles from './AdminList.module.scss'
 import AdminActions from './admin-actions/AdminActions'
 import { IAdminListItem } from './admin-list.interface'
 
-const AdminListItem: FC<IAdminListItem> = ({ removeHandler, listItem }) => {
+export const AdminListItem: FC<IAdminListItem> = ({
+	removeHandler,
+	listItem,
+}) => {
 	return (
 		<div className={styles.item}>
 			{listItem.items.map(value => (
@@ -19,5 +22,3 @@ const AdminListItem: FC<IAdminListItem> = ({ removeHandler, listItem }) => {
 		</div>
 	)
 }
-
-export default AdminListItem

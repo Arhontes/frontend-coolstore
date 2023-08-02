@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react'
 import { useRef } from 'react'
-import ReactDOM from 'react-dom'
+import * as ReactDOM from 'react-dom'
 import { RiCloseFill } from 'react-icons/ri'
 
 import styles from './Modal.module.scss'
@@ -13,7 +13,7 @@ interface IModal {
 const Modal: FC<PropsWithChildren<IModal>> = ({
 	children,
 	isOpen,
-	closeModal
+	closeModal,
 }) => {
 	const modalRef = useRef<HTMLElement | null>(document.getElementById('modal'))
 
@@ -30,7 +30,7 @@ const Modal: FC<PropsWithChildren<IModal>> = ({
 				{children}
 			</div>
 		</div>,
-		modalRef.current
+		modalRef.current,
 	)
 }
 

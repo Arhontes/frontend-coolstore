@@ -1,11 +1,11 @@
 'use client'
 
+import { AdminListItem } from '.'
 import { FC } from 'react'
 
 import Loader from '@/ui/Loader'
 
 import styles from './AdminList.module.scss'
-import AdminListItem from './AdminListItem'
 import { IListItem } from './admin-list.interface'
 
 interface IAdminList {
@@ -15,10 +15,10 @@ interface IAdminList {
 	removeHandler?: (id: number) => void
 }
 
-const AdminList: FC<IAdminList> = ({
+export const AdminList: FC<IAdminList> = ({
 	isLoading,
 	removeHandler,
-	listItems = []
+	listItems = [],
 }) => {
 	return (
 		<div>
@@ -40,5 +40,3 @@ const AdminList: FC<IAdminList> = ({
 		</div>
 	)
 }
-
-export default AdminList
