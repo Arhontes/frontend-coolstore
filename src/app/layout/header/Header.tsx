@@ -21,7 +21,7 @@ const Header: FC = () => {
 		<header
 			className='bg-secondary w-full py-6 px-6 grid'
 			style={{
-				gridTemplateColumns: '1fr 3fr 1.2fr'
+				gridTemplateColumns: '1fr 3fr 1.2fr',
 			}}
 		>
 			<Link href='/'>
@@ -33,7 +33,7 @@ const Header: FC = () => {
 						width={180}
 						height={37}
 						src='/images/logo.svg'
-						alt='Amazon v2'
+						alt='Cool Store'
 					/>
 				)}
 			</Link>
