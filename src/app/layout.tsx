@@ -14,18 +14,18 @@ import { SITE_NAME } from '@/constants/seo.constants'
 
 export const metadata: Metadata = {
 	icons: {
-		icon: '/favicon.svg'
+		icon: '/favicon.svg',
 	},
 	title: {
 		absolute: SITE_NAME,
-		template: `%s | ${SITE_NAME}`
+		template: `%s | ${SITE_NAME}`,
 	},
 	metadataBase: new URL(getSiteUrl()),
 	openGraph: {
 		type: 'website',
 		siteName: SITE_NAME,
-		emails: ['info@amazon.com']
-	}
+		emails: ['info@coolstore.com'],
+	},
 }
 
 const golos = Golos_Text({
@@ -33,7 +33,7 @@ const golos = Golos_Text({
 	subsets: ['latin', 'cyrillic-ext'],
 	display: 'swap',
 	style: ['normal'],
-	variable: '--font-golos'
+	variable: '--font-golos',
 })
 
 export default function RootLayout({ children }: PropsWithChildren<unknown>) {
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: PropsWithChildren<unknown>) {
 						<div
 							className='grid'
 							style={{
-								gridTemplateColumns: '.8fr 4fr'
+								gridTemplateColumns: '.8fr 4fr',
 							}}
 						>
 							<Sidebar />
